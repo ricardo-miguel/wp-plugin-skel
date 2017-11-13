@@ -34,7 +34,7 @@ class Admin {
 	 */
 	function assets() {
 		$current_screen = get_current_screen();
-		if ( 'wp-plugin-skel-settings-page' == $current_screen->id ) {
+		if ( 'wp-plugin-skel-settings-page' === $current_screen->id ) {
 			wp_enqueue_style( 'wp-plugin-skel-css', WP_PLUGIN_SKEL_URL . 'assets/css/admin.css' );
 			wp_enqueue_script( 'wp-plugin-skel-js', WP_PLUGIN_SKEL_URL . 'assets/js/admin.js', 'jquery' );
 
@@ -87,8 +87,9 @@ class Admin {
 			'THIS_IS_DASH' => __( 'This is the dashboard for skeleton plugin', 'wp-plugin-skel' ),
 		);
 
-		$htmlizer = new \HTMLizer();
-		echo $htmlizer->build_from_file( WP_PLUGIN_SKEL_PATH . 'includes/templates/admin.html', $vars );
+		$htmlizer   = new \HTMLizer();
+		$output     = $htmlizer->build_from_file( WP_PLUGIN_SKEL_PATH . 'includes/templates/admin.html', $vars );
+		echo esc_attr( $output );
 	}
 
 }

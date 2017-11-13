@@ -31,7 +31,7 @@ class Core {
 		$admin = new Admin();
 		$admin->init();
 
-				$shortcode = new Shortcode();
+		$shortcode = new Shortcode();
 		$shortcode->init();
 
 		$this->i18n();

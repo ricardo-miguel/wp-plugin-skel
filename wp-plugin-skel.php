@@ -34,7 +34,7 @@
  *
  * @since   0.1
  */
-defined( 'ABSPATH' ) or die( 'No script kiddies, please!' );
+defined( 'ABSPATH' ) || die( 'No script kiddies, please!' );
 
 /**
  * Set current version
